@@ -5,31 +5,108 @@ dicoAlphabetNormal = {'a':1, 'b':2, 'c':3, 'd':4, 'e':5, 'f':6, 'g':7, 'h':8, 'i
 dicoAlphabetInverse = {'a':78, 'b':77, 'c':76, 'd':75, 'e':74, 'f':73, 'g':72, 'h':71, 'i':70, 'j':69, 'k':68, 'l':67, 'm':66, 'n':65, 'o':64, 'p':63, 'q':62, 'r':61, 's':60, 't':59, 'u':58, 'v':57, 'w':56, 'x':55, 'y':54, 'z':53, 'A':52, 'B':51, 'C':50, 'D':49, 'E':48, 'F':47, 'G':46, 'H':45, 'I':44, 'J':43, 'K':42, 'L':41, 'M':40, 'N':39, 'O':38, 'P':37, 'Q':36, 'R':35, 'S':34, 'T':33, 'U':32, 'V':31, 'W':30, 'X':29, 'Y':28, 'Z':27, 'à':26, 'é':25, 'è':24, 'ê':23, 'ë':22, 'ù':21, 'ï':20, 'î':19, 'À':18, 'É':17, 'È':16, 'Ê':15, 'Ë':14, 'Ù':13, 'Ï':12, 'Î':11, '!':10, ';':9, '/':8, "'":7, '"':6, ':':5, '.':4, '%':3, '*':2, '$':1}
 
 
+listeChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'à', 'é', 'è', 'ê', 'ë', 'ù', 'ï', 'î', 'À', 'É', 'È', 'Ê', 'Ë', 'Ù', 'Ï', 'Î', '!', ';', '/', '\'', '\"', ':', '.', '%', '*', '$']
 
-def chiffrerPhrase() :
-    phrase = "je m'appelle flavio j'ai mangé !./:$*"
+listeAlphabetALenvers = []
+
+
+
+def chiffrerDocument() :
+    phrase = "Bonjour Matthew le beau gosse"
 
     inverserAlphabet(phrase, dicoAlphabetNormal, dicoAlphabetInverse)
+
+    return phrase
+
+
+def dechiffrerDocument() :
+
+    phraseChiffre = chiffrerDocument()
+
+    phraseDechiffre = remettreAlphabetEndroit(phraseChiffre)
+
+    return phraseDechiffre
 
 
 
 def inverserAlphabet(phrase, dicoAlphabetNormal, dicoAlphabetInverse) :
-   
+
     phraseChiffre = ""
 
     for lettre in phrase :
         if lettre == " " :
-            phraseChiffre += ""
+            phraseChiffre += " "
         else :
             #Recupere num lettre inverse
             numLettreInverse = dicoAlphabetInverse[lettre]
+
             #Recupere la lettre inverse dans la liste alphabet normal par rapport au num lettre inverse
             lettreInverse = list(dicoAlphabetNormal)[numLettreInverse - 1]
+
             #Concatene la chaine de caracteres
             phraseChiffre +=  lettreInverse
 
     print(phrase)
     print(phraseChiffre)
+
+
+
+
+def remettreAlphabetEndroit(phraseChiffre) :
+
+
+    phraseDechiffre = ""
+
+    for lettre in phraseChiffre :
+        if lettre == " " :
+            phraseDechiffre += " "
+        else :
+            #Recupere num lettre inverse
+            numLettreALendroit = dicoAlphabetNormal[lettre]
+
+            #Recupere la lettre inverse dans la liste alphabet normal par rapport au num lettre inverse
+            lettreNormale = getLettreALendroit(numLettreALendroit)
+
+            #Concatene la chaine de caracteres
+            phraseDechiffre +=  lettreNormale
+
+
+    print(phraseChiffre)
+    print(phraseDechiffre)
+
+
+
+def getLettreALendroit(numLettreALendroit) :
+            clefDico = list(dicoAlphabetInverse.keys())
+            valeurDico = list(dicoAlphabetInverse.values())
+
+            positionValeurDicoInverse = valeurDico.index(numLettreALendroit)
+
+            lettreALendroit = clefDico[positionValeurDicoInverse]
+
+            return lettreALendroit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -42,11 +119,15 @@ def genDico() :
     char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZàéèêëùïîÀÉÈÊËÙÏÎ!;/'\":.%*$"
 
 
-    for lettre in char :
+    for lettre in char[::-1] :
         i+=1
-        charFormate += "'" + lettre + "':" + str(i) + ", "
+        charFormate += "'" + lettre + "', "
+
+        print()
 
     print(charFormate)
+
+
 
 
 
