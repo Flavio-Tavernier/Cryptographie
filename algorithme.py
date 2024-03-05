@@ -1,36 +1,30 @@
 import random
 
-dicoAlphabetNormal = {'a':1, 'b':2, 'c':3, 'd':4, 'e':5, 'f':6, 'g':7, 'h':8, 'i':9, 'j':10, 'k':11, 'l':12, 'm':13, 'n':14, 'o':15, 'p':16, 'q':17, 'r':18, 's':19, 't':20, 'u':21, 'v':22, 'w':23, 'x':24, 'y':25, 'z':26, 'A':27, 'B':28, 'C':29, 'D':30, 'E':31, 'F':32, 'G':33, 'H':34, 'I':35, 'J':36, 'K':37, 'L':38, 'M':39, 'N':40, 'O':41, 'P':42, 'Q':43, 'R':44, 'S':45, 'T':46, 'U':47, 'V':48, 'W':49, 'X':50, 'Y':51, 'Z':52, 'à':53, 'é':54, 'è':55, 'ê':56, 'ë':57, 'ù':58, 'ï':59, 'î':60, 'À':61, 'É':62, 'È':63, 'Ê':64, 'Ë':65, 'Ù':66, 'Ï':67, 'Î':68, '!':69, ';':70, '/':71, "'":72, '"':73, ':':74, '.':75, '%':76, '*':77, '$':78}
+listeChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'à', 'é', 'è', 'ê', 'ë', 'ù', 'ï', 'î', 'À', 'É', 'È', 'Ê', 'Ë', 'Ù', 'Ï', 'Î', '.', '?', '!', ':', '.', ',', '/', '\\', '$', '§', '£', '%', '=', '+', '-', '*', '\'', '\"', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
-dicoAlphabetInverse = {'a':78, 'b':77, 'c':76, 'd':75, 'e':74, 'f':73, 'g':72, 'h':71, 'i':70, 'j':69, 'k':68, 'l':67, 'm':66, 'n':65, 'o':64, 'p':63, 'q':62, 'r':61, 's':60, 't':59, 'u':58, 'v':57, 'w':56, 'x':55, 'y':54, 'z':53, 'A':52, 'B':51, 'C':50, 'D':49, 'E':48, 'F':47, 'G':46, 'H':45, 'I':44, 'J':43, 'K':42, 'L':41, 'M':40, 'N':39, 'O':38, 'P':37, 'Q':36, 'R':35, 'S':34, 'T':33, 'U':32, 'V':31, 'W':30, 'X':29, 'Y':28, 'Z':27, 'à':26, 'é':25, 'è':24, 'ê':23, 'ë':22, 'ù':21, 'ï':20, 'î':19, 'À':18, 'É':17, 'È':16, 'Ê':15, 'Ë':14, 'Ù':13, 'Ï':12, 'Î':11, '!':10, ';':9, '/':8, "'":7, '"':6, ':':5, '.':4, '%':3, '*':2, '$':1}
-
-
-listeChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'à', 'é', 'è', 'ê', 'ë', 'ù', 'ï', 'î', 'À', 'É', 'È', 'Ê', 'Ë', 'Ù', 'Ï', 'Î', '!', ';', '/', '\'', '\"', ':', '.', '%', '*', '$']
-
-listeAlphabetALenvers = []
+listeCharsInverses = ['0', '9', '8', '7', '6', '5', '4', '3', '2', '1', '\"', '\'', '*', '-', '+', '=', '%', '£', '§', '$', '\\', '/', ',', '.', ':', '!', '?', '.', 'Î', 'Ï', 'Ù', 'Ë', 'Ê', 'È', 'É', 'À', 'î', 'ï', 'ù', 'ë', 'ê', 'è', 'é', 'à', 'Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A', 'z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']
 
 
 
-def chiffrerDocument() :
-    phrase = "Bonjour Matthew le beau gosse"
 
-    inverserAlphabet(phrase, dicoAlphabetNormal, dicoAlphabetInverse)
+def chiffrerPhrase() :
+    phrase = input("Entrez la phrase que vous souhaitez chiffrer : ")
 
-    return phrase
+    phraseChiffre = inverserChars(phrase, listeChars, listeCharsInverses)
+
+    return phraseChiffre
 
 
-def dechiffrerDocument() :
+def dechiffrerPhrase() :
+    phraseChiffre = input("Entrez la phrase que vous souhaitez déchiffrer : ")
 
-    phraseChiffre = chiffrerDocument()
-
-    phraseDechiffre = remettreAlphabetEndroit(phraseChiffre)
+    phraseDechiffre = retablirChars(phraseChiffre)
 
     return phraseDechiffre
 
 
 
-def inverserAlphabet(phrase, dicoAlphabetNormal, dicoAlphabetInverse) :
-
+def inverserChars(phrase, listeChars, listeCharsInverses) :
     phraseChiffre = ""
 
     for lettre in phrase :
@@ -38,53 +32,40 @@ def inverserAlphabet(phrase, dicoAlphabetNormal, dicoAlphabetInverse) :
             phraseChiffre += " "
         else :
             #Recupere num lettre inverse
-            numLettreInverse = dicoAlphabetInverse[lettre]
+            numLettreInverse = listeCharsInverses.index(lettre)
 
             #Recupere la lettre inverse dans la liste alphabet normal par rapport au num lettre inverse
-            lettreInverse = list(dicoAlphabetNormal)[numLettreInverse - 1]
+            lettreInverse = listeChars[numLettreInverse]
 
             #Concatene la chaine de caracteres
             phraseChiffre +=  lettreInverse
 
-    print(phrase)
-    print(phraseChiffre)
+
+    print("\n\t\t\tPhrase déchiffrée : " + phrase)
+    print("\t\t\tPhrase chiffrée : " + phraseChiffre)
 
 
 
 
-def remettreAlphabetEndroit(phraseChiffre) :
-
-
+def retablirChars(phraseChiffre) :
     phraseDechiffre = ""
+
 
     for lettre in phraseChiffre :
         if lettre == " " :
             phraseDechiffre += " "
         else :
             #Recupere num lettre inverse
-            numLettreALendroit = dicoAlphabetNormal[lettre]
+            numLettreALendroit = listeChars.index(lettre)
 
             #Recupere la lettre inverse dans la liste alphabet normal par rapport au num lettre inverse
-            lettreNormale = getLettreALendroit(numLettreALendroit)
+            lettreNormale = listeCharsInverses[numLettreALendroit]
 
             #Concatene la chaine de caracteres
             phraseDechiffre +=  lettreNormale
 
-
-    print(phraseChiffre)
-    print(phraseDechiffre)
-
-
-
-def getLettreALendroit(numLettreALendroit) :
-            clefDico = list(dicoAlphabetInverse.keys())
-            valeurDico = list(dicoAlphabetInverse.values())
-
-            positionValeurDicoInverse = valeurDico.index(numLettreALendroit)
-
-            lettreALendroit = clefDico[positionValeurDicoInverse]
-
-            return lettreALendroit
+    print("\n\t\t\tPhrase chiffrée : " + phraseChiffre)
+    print("\t\t\tPhrase déchiffrée : " + phraseDechiffre)
 
 
 
@@ -94,15 +75,26 @@ def getLettreALendroit(numLettreALendroit) :
 
 
 
+def programme() :
+    while True :
+        print(
+        """
+            Algorithme de chiffrement :
 
+        Pour chiffrer une phrase tappez 1
+        Pour déchiffrer une phrase tappez 2
+        Pour quitter tappez sur une touche
+        """
+        )
 
+        choix = input()
 
-
-
-
-
-
-
+        if choix == "1" :
+            chiffrerPhrase()
+        elif choix == "2" :
+            dechiffrerPhrase()
+        else :
+            break
 
 
 
@@ -115,32 +107,17 @@ def getLettreALendroit(numLettreALendroit) :
 
 def genDico() :
     charFormate = ""
-    i = 0
-    char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZàéèêëùïîÀÉÈÊËÙÏÎ!;/'\":.%*$"
+    char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZàéèêëùïîÀÉÈÊËÙÏÎ.?!:.,/\$§£%=+-*\'\"1234567890"
 
 
     for lettre in char[::-1] :
-        i+=1
         charFormate += "'" + lettre + "', "
 
-        print()
 
     print(charFormate)
 
 
 
-
-
-
-
-def getPhraseAleatoire(dicoAlphabetNormal) :
-
-    phraseAleatoire = ""
-
-    for i in range(12) :
-        nombreAleatoire = random.randint(1, 26)
-        lettreAleatoire = list(dicoAlphabetNormal)[nombreAleatoire - 1]
-        phraseAleatoire += lettreAleatoire
 
 
 
