@@ -41,8 +41,8 @@ def inverserChars(phrase, listeChars, listeCharsInverses) :
             phraseChiffre +=  lettreInverse
 
 
-    print("\n\t\t\tPhrase déchiffrée : " + phrase)
-    print("\t\t\tPhrase chiffrée : " + phraseChiffre)
+    print("\n\t\tPhrase déchiffrée : " + phrase)
+    print("\t\tPhrase chiffrée : " + phraseChiffre)
 
 
 
@@ -64,8 +64,8 @@ def retablirChars(phraseChiffre) :
             #Concatene la chaine de caracteres
             phraseDechiffre +=  lettreNormale
 
-    print("\n\t\t\tPhrase chiffrée : " + phraseChiffre)
-    print("\t\t\tPhrase déchiffrée : " + phraseDechiffre)
+    print("\n\t\tPhrase chiffrée : " + phraseChiffre)
+    print("\t\tPhrase déchiffrée : " + phraseDechiffre)
 
 
 
