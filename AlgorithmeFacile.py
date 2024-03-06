@@ -5,6 +5,31 @@ listeCharsInverses = ['0', '9', '8', '7', '6', '5', '4', '3', '2', '1', '\"', '\
 
 
 
+def programme() :
+    while True :
+        print(
+        """
+        Algorithme de chiffrement - inversion alphabet :
+
+        Pour chiffrer une phrase tappez 1
+        Pour déchiffrer une phrase tappez 2
+        Pour quitter tappez sur une touche
+        """
+        )
+
+        choix = input()
+
+        if choix == "1" :
+            chiffrerPhrase()
+        elif choix == "2" :
+            dechiffrerPhrase()
+        else :
+            break
+
+
+
+
+
 def chiffrerPhrase() :
     phrase = input("Entrez la phrase que vous souhaitez chiffrer : ")
 
@@ -73,26 +98,7 @@ def retablirChars(phraseChiffre) :
 
 
 
-def programme() :
-    while True :
-        print(
-        """
-            Algorithme de chiffrement :
 
-        Pour chiffrer une phrase tappez 1
-        Pour déchiffrer une phrase tappez 2
-        Pour quitter tappez sur une touche
-        """
-        )
-
-        choix = input()
-
-        if choix == "1" :
-            chiffrerPhrase()
-        elif choix == "2" :
-            dechiffrerPhrase()
-        else :
-            break
 
 
 
