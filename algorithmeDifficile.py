@@ -21,8 +21,8 @@ def programme() :
             print("\n\t\tCodé : " + cryptedSentence)
         elif choix == "2" :
             infosUser = askInfosUser()
-            decrypt(infosUser[0], infosUser[1], infosUser[2], listeChars)
-            print("\n\t\tNon codé : " + clearSentence)
+            clearSentence = decrypt(infosUser[0], infosUser[1], infosUser[2], listeChars)
+            print("\n\t\tDécodé : " + clearSentence)
         else :
             break
 
@@ -78,12 +78,9 @@ def getCryptedLetter(listeChars, indexAfterAffineAndModulo) :
 
 
 
-# Affichage du mot déchiffré
-def decrypt(listeChars):
+# Dechiffrement
+def decrypt(clefA, clefB, cryptedSentence, listeChars):
 
-    cryptedSentence = input("Entrez la phrase que vous souhaitez déchiffrer : ")
-    clefA = int(input("Entrez la clef a : "))
-    clefB = int(input("Entrez la clef b : "))
     clearSentence = ""
 
     for lettre in cryptedSentence :
@@ -92,8 +89,6 @@ def decrypt(listeChars):
     return clearSentence
 
 
-
-# Fonction de déchiffrement
 def affineDecrypting(clefA,clefB,lettre,listeChars):
 
     indexOfCryptedLetter = getIndexOfLetter(listeChars, lettre)
