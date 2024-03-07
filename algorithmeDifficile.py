@@ -1,5 +1,6 @@
-listeChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+listeChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'à', 'é', 'è', 'ê', 'ë', 'ù', 'ï', 'î', 'À', 'É', 'È', 'Ê', 'Ë', 'Ù', 'Ï', 'Î', '.', '?', '!', ':', '.', ',', '/', '\\', '$', '§', '£', '%', '=', '+', '-', '*', '\'', '\"', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
+nbChars = len(listeChars)
 
 def programme() :
     while True :
@@ -45,12 +46,15 @@ def crypt(clefA, clefB, clearSentence, listeChars) :
 
 
     for lettre in clearSentence :
-        indexOfLetter = getIndexOfLetter(listeChars, lettre)
-        indexAfterAffine = applyAffineFunction(indexOfLetter, clefA, clefB)
-        indexAfterAffineAndModulo = applyModulo(indexAfterAffine)
-        cryptedLetter = getCryptedLetter(listeChars, indexAfterAffineAndModulo)
+        if lettre == " " :
+            cryptedSentence += " "
+        else :
+            indexOfLetter = getIndexOfLetter(listeChars, lettre)
+            indexAfterAffine = applyAffineFunction(indexOfLetter, clefA, clefB)
+            indexAfterAffineAndModulo = applyModulo(indexAfterAffine)
+            cryptedLetter = getCryptedLetter(listeChars, indexAfterAffineAndModulo)
 
-        cryptedSentence += cryptedLetter
+            cryptedSentence += cryptedLetter
 
     return cryptedSentence
 
@@ -66,7 +70,7 @@ def applyAffineFunction(indexOfLetter, clefA, clefB) :
 
 
 def applyModulo(indexAfterAffine) :
-    return indexAfterAffine % 26
+    return indexAfterAffine % nbChars
 
 
 def getCryptedLetter(listeChars, indexAfterAffineAndModulo) :
@@ -84,7 +88,10 @@ def decrypt(clefA, clefB, cryptedSentence, listeChars):
     clearSentence = ""
 
     for lettre in cryptedSentence :
-        clearSentence += affineDecrypting(clefA,clefB,lettre, listeChars)
+        if lettre == " " :
+            clearSentence += " "
+        else :
+            clearSentence += affineDecrypting(clefA,clefB,lettre, listeChars)
 
     return clearSentence
 
@@ -93,14 +100,14 @@ def affineDecrypting(clefA,clefB,lettre,listeChars):
 
     indexOfCryptedLetter = getIndexOfLetter(listeChars, lettre)
 
-    indexOfClearLetter =(inverse(clefA)*(indexOfCryptedLetter-clefB))%26
+    indexOfClearLetter =(inverse(clefA)*(indexOfCryptedLetter-clefB)) % nbChars
 
     return listeChars[indexOfClearLetter]
 
 
 def inverse(clefA):
         indexOfClearLetter=0
-        while (clefA * indexOfClearLetter % 26 != 1):
+        while (clefA * indexOfClearLetter % nbChars != 1):
                 indexOfClearLetter = indexOfClearLetter + 1
         return indexOfClearLetter
 
