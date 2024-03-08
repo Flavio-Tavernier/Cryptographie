@@ -19,7 +19,7 @@ page1.grid(row=0, column=0, sticky="nsew")
 
 tittlePage1 = Label(page1, text="Séléctionnez une méthode de chiffrement", font=style1)
 tittlePage1.place(x = 300, y = 10)
-#tittlePage1.pack()
+tittlePage1.pack()
 
 btnAlphaberCrypt = ttk.Button(page1, text="Chiffrement alphabet inversé", command=lambda: page2.tkraise())
 btnAlphaberCrypt.pack()
@@ -50,6 +50,9 @@ entryClearSentencePage2 = Entry(page2)
 entryClearSentencePage2['font'] = f
 entryClearSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
+btnToCryptPage2 = ttk.Button(page2, text="Chiffrer la phrase", command=lambda: chiffrerPhrase())
+btnToCryptPage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
+
 
 labelEntryCryptedSentencePage2 = Label(page2, text = "Phrase chiffrée :", font=style2)
 labelEntryCryptedSentencePage2.pack()
@@ -59,8 +62,7 @@ displayCryptedSentencePage2['font'] = f
 displayCryptedSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
-btnToCryptPage2 = Button(page2, text="Chiffrer la phrase", command=lambda: chiffrerPhrase(), font=style2)
-btnToCryptPage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
+
 
 
 
@@ -73,7 +75,7 @@ entryCryptedSentencePage2 = Entry(page2)
 entryCryptedSentencePage2['font'] = f
 entryCryptedSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
-btnToDecryptPage2 = Button(page2, text="déchiffrer la phrase", command=lambda: dechiffrerPhrase(), font=style2)
+btnToDecryptPage2 = ttk.Button(page2, text="déchiffrer la phrase", command=lambda: dechiffrerPhrase())
 btnToDecryptPage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 labelEntryDecryptedSentencePage2 = Label(page2, text = "Phrase déchiffrée :", font=style2)
@@ -85,7 +87,7 @@ displayClearSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
-btnReturnHomePage2 = Button(page2, text="Retour à l'accueil", command=lambda: page1.tkraise(), font=style2)
+btnReturnHomePage2 = ttk.Button(page2, text="Retour à l'accueil", command=lambda: page1.tkraise())
 btnReturnHomePage2.pack(side=BOTTOM, anchor=W, fill=X, expand=YES)
 
 
@@ -128,7 +130,7 @@ entryClefB['font'] = f
 entryClefB.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
-btnToCryptPage3 = Button(page3, text="Chiffrer la phrase", command=lambda: crypt(), font=style2)
+btnToCryptPage3 = ttk.Button(page3, text="Chiffrer la phrase", command=lambda: crypt())
 btnToCryptPage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
@@ -170,7 +172,7 @@ entryClefBToDecrypt['font'] = f
 entryClefBToDecrypt.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
-btnToDecryptPage3 = Button(page3, text="déchiffrer la phrase", command=lambda: decrypt(), font=style2)
+btnToDecryptPage3 = ttk.Button(page3, text="déchiffrer la phrase", command=lambda: decrypt())
 btnToDecryptPage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
@@ -185,14 +187,13 @@ displayDecryptedSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
-btnReturnHome = Button(page3, text="Retour à l'accueil", command=lambda: page1.tkraise(), font=style2)
+btnReturnHome = ttk.Button(page3, text="Retour à l'accueil", command=lambda: page1.tkraise())
 btnReturnHome.pack()
 
 
 
 
 page1.tkraise()
-window.geometry("1200x600")
 window.resizable(False, False)
 
 
