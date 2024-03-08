@@ -18,13 +18,16 @@ page1 = Frame(window)
 page1.grid(row=0, column=0, sticky="nsew")
 
 tittlePage1 = Label(page1, text="Séléctionnez une méthode de chiffrement", font=style1)
-tittlePage1.pack()
+tittlePage1.place(x = 300, y = 10)
+#tittlePage1.pack()
 
-btnAlphaberCrypt = Button(page1, text="Chiffrement alphabet inversé", command=lambda: page2.tkraise(), font=style2)
+btnAlphaberCrypt = ttk.Button(page1, text="Chiffrement alphabet inversé", command=lambda: page2.tkraise())
 btnAlphaberCrypt.pack()
 
-btnAffineCrypt = Button(page1, text="Chiffrement affine", command=lambda: page3.tkraise(), font=style2)
+btnAffineCrypt = ttk.Button(page1, text="Chiffrement affine", command=lambda: page3.tkraise())
 btnAffineCrypt.pack()
+
+
 
 
 
@@ -40,54 +43,50 @@ tittlePage2.pack(pady=20, side=TOP, anchor=W, fill=X, expand=YES)
 
 
 #ClearToCrypt
-labelEntryClearSentence = Label(page2, text = "Entrez la phrase que vous souhaitez chiffrer", font=style2)
-labelEntryClearSentence.pack()
+labelEntryClearSentencePage2 = Label(page2, text = "Entrez la phrase que vous souhaitez chiffrer", font=style2)
+labelEntryClearSentencePage2.pack()
 
-entryClearSentence = Entry(page2)
-entryClearSentence['font'] = f
-entryClearSentence.pack(side=TOP, anchor=W, fill=X, expand=YES)
-
-
-labelEntryCryptedSentence = Label(page2, text = "Phrase chiffrée :", font=style2)
-labelEntryCryptedSentence.pack()
-
-displayCryptedSentence = Entry(page2)
-displayCryptedSentence['font'] = f
-displayCryptedSentence.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryClearSentencePage2 = Entry(page2)
+entryClearSentencePage2['font'] = f
+entryClearSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
-btnToCrypt = Button(page2, text="Chiffrer la phrase", command=lambda: chiffrerPhrase(), font=style2)
-btnToCrypt.pack(side=TOP, anchor=W, fill=X, expand=YES)
+labelEntryCryptedSentencePage2 = Label(page2, text = "Phrase chiffrée :", font=style2)
+labelEntryCryptedSentencePage2.pack()
+
+displayCryptedSentencePage2 = Entry(page2)
+displayCryptedSentencePage2['font'] = f
+displayCryptedSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
+
+
+btnToCryptPage2 = Button(page2, text="Chiffrer la phrase", command=lambda: chiffrerPhrase(), font=style2)
+btnToCryptPage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
 
 #CryptToClear
-labelEntryCryptedSentence = Label(page2, text = "Entrez la phrase que vous souhaitez déchiffrer", font=style2)
-labelEntryCryptedSentence.pack()
+labelEntryCryptedSentencePage2 = Label(page2, text = "Entrez la phrase que vous souhaitez déchiffrer", font=style2)
+labelEntryCryptedSentencePage2.pack()
 
-entryCryptedSentence = Entry(page2)
-#entryCryptedSentence.place(x = 270 , y = 30, width = 30)
-entryCryptedSentence['font'] = f
-entryCryptedSentence.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryCryptedSentencePage2 = Entry(page2)
+entryCryptedSentencePage2['font'] = f
+entryCryptedSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
-btnToDecrypt = Button(page2, text="déchiffrer la phrase", command=lambda: dechiffrerPhrase(), font=style2)
-btnToDecrypt.pack(side=TOP, anchor=W, fill=X, expand=YES)
+btnToDecryptPage2 = Button(page2, text="déchiffrer la phrase", command=lambda: dechiffrerPhrase(), font=style2)
+btnToDecryptPage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
-labelEntryDecryptedSentence = Label(page2, text = "Phrase déchiffrée :", font=style2)
-labelEntryDecryptedSentence.pack()
+labelEntryDecryptedSentencePage2 = Label(page2, text = "Phrase déchiffrée :", font=style2)
+labelEntryDecryptedSentencePage2.pack()
 
-entryDecryptedSentence = Entry(page2)
-entryDecryptedSentence.place(x = 270 , y = 30, width = 30)
-entryDecryptedSentence['font'] = f
-entryDecryptedSentence.pack(side=TOP, anchor=W, fill=X, expand=YES)
+displayClearSentencePage2 = Entry(page2)
+displayClearSentencePage2['font'] = f
+displayClearSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
-btnReturnHome = Button(page2, text="Retour à l'accueil", command=lambda: page1.tkraise(), font=style2)
-btnReturnHome.pack(side=BOTTOM, anchor=W, fill=X, expand=YES)
-
-
+btnReturnHomePage2 = Button(page2, text="Retour à l'accueil", command=lambda: page1.tkraise(), font=style2)
+btnReturnHomePage2.pack(side=BOTTOM, anchor=W, fill=X, expand=YES)
 
 
 
@@ -103,12 +102,12 @@ tittlePage3.pack(pady=20)
 
 
 #ClearToCrypt
-labelEntryClearSentence = Label(page3, text = "Entrez la phrase que vous souhaitez chiffrer", font=style2)
-labelEntryClearSentence.pack()
+labelEntryClearSentencePage3 = Label(page3, text = "Entrez la phrase que vous souhaitez chiffrer", font=style2)
+labelEntryClearSentencePage3.pack()
 
-entryClearSentence = Entry(page3)
-entryClearSentence['font'] = f
-entryClearSentence.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryClearSentencePage3 = Entry(page3)
+entryClearSentencePage3['font'] = f
+entryClearSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
@@ -129,65 +128,59 @@ entryClefB['font'] = f
 entryClefB.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
-btnToCrypt = Button(page3, text="Chiffrer la phrase", command=lambda: crypt(), font=style2)
-btnToCrypt.pack(side=TOP, anchor=W, fill=X, expand=YES)
+btnToCryptPage3 = Button(page3, text="Chiffrer la phrase", command=lambda: crypt(), font=style2)
+btnToCryptPage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
-labelEntryCryptedSentence = Label(page3, text = "Phrase chiffrée :", font=style2)
-labelEntryCryptedSentence.pack()
+labelEntryCryptedSentencePage3 = Label(page3, text = "Phrase chiffrée :", font=style2)
+labelEntryCryptedSentencePage3.pack()
 
-displayCryptedSentence = Entry(page3)
-displayCryptedSentence['font'] = f
-displayCryptedSentence.pack(side=TOP, anchor=W, fill=X, expand=YES)
+displayCryptedSentencePage3 = Entry(page3)
+displayCryptedSentencePage3['font'] = f
+displayCryptedSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
 
 #CryptToDecrypt
-labelCryptSentence = Label(page3, text = "Entrez la phrase que vous souhaitez chiffrer", font=style2)
-labelCryptSentence.pack()
+labelEntryCryptedSentencePage3 = Label(page3, text = "Entrez la phrase que vous souhaitez chiffrer", font=style2)
+labelEntryCryptedSentencePage3.pack()
 
-displayCryptSentence = Entry(page3)
-displayCryptSentence['font'] = f
-displayCryptSentence.pack(side=TOP, anchor=W, fill=X, expand=YES)
-
-
-
-labelClefA = Label(page3, text = "Entrez la clef \"a\"", font=style2)
-labelClefA.pack()
-
-clefA = Entry(page3)
-clefA['font'] = f
-clefA.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryCryptedSentencePage3 = Entry(page3)
+entryCryptedSentencePage3['font'] = f
+entryCryptedSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
-labelClefB = Label(page3, text = "Entrez la clef \"b\"", font=style2)
-labelClefB.pack()
+labelClefAToDecrypt = Label(page3, text = "Entrez la clef \"a\"", font=style2)
+labelClefAToDecrypt.pack()
 
-clefB = Entry(page3)
-clefB['font'] = f
-clefB.pack(side=TOP, anchor=W, fill=X, expand=YES)
-
-
-btnToDecrypt = Button(page3, text="déchiffrer la phrase", command=lambda: decrypt(), font=style2)
-btnToDecrypt.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryClefAToDecrypt = Entry(page3)
+entryClefAToDecrypt['font'] = f
+entryClefAToDecrypt.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
-labelClearSentence = Label(page3, text = "Phrase déchiffrée :", font=style2)
-labelClearSentence.pack()
+labelClefBToDecrypt = Label(page3, text = "Entrez la clef \"b\"", font=style2)
+labelClefBToDecrypt.pack()
 
-clearSentence = Entry(page3)
-clearSentence['font'] = f
-clearSentence.pack(side=TOP, anchor=W, fill=X, expand=YES)
-
-
+entryClefBToDecrypt = Entry(page3)
+entryClefBToDecrypt['font'] = f
+entryClefBToDecrypt.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
+btnToDecryptPage3 = Button(page3, text="déchiffrer la phrase", command=lambda: decrypt(), font=style2)
+btnToDecryptPage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
+
+labelEntryDecryptedSentencePage3 = Label(page3, text = "Phrase déchiffrée :", font=style2)
+labelEntryDecryptedSentencePage3.pack()
+
+displayDecryptedSentencePage3 = Entry(page3)
+displayDecryptedSentencePage3['font'] = f
+displayDecryptedSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
@@ -217,6 +210,8 @@ window.mainloop()
 
 
 
+
+
 listeChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'à', 'é', 'è', 'ê', 'ë', 'ù', 'ï', 'î', 'À', 'É', 'È', 'Ê', 'Ë', 'Ù', 'Ï', 'Î', '.', '?', '!', ':', '.', ',', '/', '\\', '$', '§', '£', '%', '=', '+', '-', '*', '\'', '\"', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
 listeCharsInverses = ['0', '9', '8', '7', '6', '5', '4', '3', '2', '1', '\"', '\'', '*', '-', '+', '=', '%', '£', '§', '$', '\\', '/', ',', '.', ':', '!', '?', '.', 'Î', 'Ï', 'Ù', 'Ë', 'Ê', 'È', 'É', 'À', 'î', 'ï', 'ù', 'ë', 'ê', 'è', 'é', 'à', 'Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A', 'z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']
@@ -227,23 +222,25 @@ nbChars = len(listeChars)
 
 
 def chiffrerPhrase() :
-    phrase = entryClearSentence.get()
+    phrase = entryClearSentencePage2.get()
+
+    print(phrase)
 
     phraseChiffre = inverserChars(phrase, listeChars, listeCharsInverses)
 
     print(phraseChiffre)
 
-    displayCryptedSentence.delete(0, "end")
-    displayCryptedSentence.insert(0, phraseChiffre)
+    displayCryptedSentencePage2.delete(0, "end")
+    displayCryptedSentencePage2.insert(0, phraseChiffre)
 
 
 def dechiffrerPhrase() :
-    phraseChiffre = entryCryptedSentence.get()
+    phraseChiffre = entryCryptedSentencePage2.get()
 
     phraseDechiffre = retablirChars(phraseChiffre)
 
-    entryDecryptedSentence.delete(0, "end")
-    entryDecryptedSentence.insert(0, phraseDechiffre)
+    displayClearSentencePage2.delete(0, "end")
+    displayClearSentencePage2.insert(0, phraseDechiffre)
 
 
 
@@ -310,7 +307,7 @@ def retablirChars(phraseChiffre) :
 def crypt() :
     clefA = int(entryClefA.get())
     clefB = int(entryClefB.get())
-    clearSentence = entryClearSentence.get()
+    clearSentence = entryClearSentencePage3.get()
 
     cryptedSentence = ""
 
@@ -326,8 +323,8 @@ def crypt() :
 
             cryptedSentence += cryptedLetter
 
-    displayCryptedSentence.delete(0, 'end')
-    displayCryptedSentence.insert(0, cryptedSentence)
+    displayCryptedSentencePage3.delete(0, 'end')
+    displayCryptedSentencePage3.insert(0, cryptedSentence)
     return cryptedSentence
 
 
@@ -351,11 +348,12 @@ def getCryptedLetter(listeChars, indexAfterAffineAndModulo) :
 
 
 
+
 # Dechiffrement
 def decrypt():
-    clefA = int(entryClefA.get())
-    clefB = int(entryClefB.get())
-    cryptedSentence = displayCryptSentence.get()
+    clefA = int(entryClefAToDecrypt.get())
+    clefB = int(entryClefBToDecrypt.get())
+    cryptedSentence = entryCryptedSentencePage3.get()
     decryptedSentence = ""
 
     for lettre in cryptedSentence :
@@ -364,8 +362,8 @@ def decrypt():
         else :
             decryptedSentence += affineDecrypting(clefA,clefB,lettre, listeChars)
 
-    clearSentence.delete(0, 'end')
-    clearSentence.insert(0, decryptedSentence)
+    displayDecryptedSentencePage3.delete(0, 'end')
+    displayDecryptedSentencePage3.insert(0, decryptedSentence)
     return decryptedSentence
 
 
@@ -383,14 +381,6 @@ def inverse(clefA):
         while (clefA * indexOfClearLetter % nbChars != 1):
                 indexOfClearLetter = indexOfClearLetter + 1
         return indexOfClearLetter
-
-
-
-
-
-
-
-
 
 
 
