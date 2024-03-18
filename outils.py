@@ -1,4 +1,4 @@
-def genDico() :
+def genListe() :
     charFormate = ""
     char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZàéèêëùïîÀÉÈÊËÙÏÎ.?!:.,/\$§£%=+-*\'\"1234567890"
 
@@ -8,3 +8,4 @@ def genDico() :
 
 
     print(charFormate)
+
