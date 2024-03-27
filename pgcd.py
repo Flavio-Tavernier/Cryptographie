@@ -1,13 +1,24 @@
-def pgcd(clefA, nbChars) :
+def pgcd(nbChars) :
 
-    if clefA < nbChars :
-        clefA, nbChars = nbChars, clefA
+    i = 0 
+    listPgcd = []
 
-    if clefA % nbChars == 0 :
-        return nbChars
+    while i < nbChars :
+        i += 1
 
-    for i in range(nbChars//2, 0, -1) :
-        if clefA % i == 0 and nbChars % i == 0 :
-            return i
+        print(i)
 
+        if i < nbChars :
+            i, nbChars = nbChars, i
+
+        if i % nbChars == 0 :
+            print(i)
+            listPgcd.append(i) 
+
+        for k in range(nbChars//2, 0, -1) :
+            if k % k == 0 and nbChars % k == 0 :
+                listPgcd.append("test")
+
+    print(listPgcd)
+        
 

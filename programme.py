@@ -103,7 +103,7 @@ def retablirChars(phraseChiffre) :
 
 
 def crypt() :
-    clefA = int(entryClefA.get())
+    clefA = int(valuesClefACrypt.get())
     clefB = int(entryClefB.get())
     clearSentence = entryClearSentencePage3.get()
 
@@ -149,7 +149,7 @@ def getCryptedLetter(listeChars, indexAfterAffineAndModulo) :
 
 # Dechiffrement
 def decrypt():
-    clefA = int(entryClefAToDecrypt.get())
+    clefA = int(valuesClefACDecrypt.get())
     clefB = int(entryClefBToDecrypt.get())
     cryptedSentence = entryCryptedSentencePage3.get()
     decryptedSentence = ""
@@ -209,8 +209,8 @@ def inverse(clefA):
 
 window = tk.Tk()
 f = font.Font(family='Bahnschrift')
-style1 = font.Font(size=20)
-style2 = font.Font(size=16)
+style1 = font.Font(size=25)
+style2 = font.Font(size=15)
 style3 = font.Font(size=12)
 
 
@@ -228,9 +228,6 @@ btnAlphaberCrypt.pack()
 
 btnAffineCrypt = ttk.Button(page1, text="Chiffrement affine", command=lambda: page3.tkraise())
 btnAffineCrypt.pack()
-
-
-
 
 
 
@@ -261,36 +258,40 @@ btnToCryptPage2.grid(row=3, column=0)
 
 labelEntryCryptedSentencePage2 = Label(page2, text = "Phrase chiffrée :", font=style2)
 labelEntryCryptedSentencePage2.grid(row=4, column=0)
-3
+
 displayCryptedSentencePage2 = Entry(page2)
 displayCryptedSentencePage2['font'] = f
 displayCryptedSentencePage2.grid(row=5, column=0)
 
 
 
+#separation
+separationPage2 = Canvas(page2, width=5, bg="grey")
+separationPage2.grid(row=1,column=1, rowspan=6);
+
 
 #CryptToClear
 labelEntryCryptedSentencePage2 = Label(page2, text = "Entrez la phrase que vous souhaitez déchiffrer", font=style2)
-labelEntryCryptedSentencePage2.grid(row=1,column=0)
+labelEntryCryptedSentencePage2.grid(row=1,column=2)
 
 entryCryptedSentencePage2 = Entry(page2)
 entryCryptedSentencePage2['font'] = f
-entryCryptedSentencePage2.grid(row=2,column=0)
+entryCryptedSentencePage2.grid(row=2,column=2)
 
 btnToDecryptPage2 = ttk.Button(page2, text="déchiffrer la phrase", command=lambda: dechiffrerPhrase())
-btnToDecryptPage2.grid(row=3,column=0)
+btnToDecryptPage2.grid(row=3,column=2)
 
 labelEntryDecryptedSentencePage2 = Label(page2, text = "Phrase déchiffrée :", font=style2)
-labelEntryDecryptedSentencePage2.grid(row=4,column=0)
+labelEntryDecryptedSentencePage2.grid(row=4,column=2)
 
 displayClearSentencePage2 = Entry(page2)
 displayClearSentencePage2['font'] = f
-displayClearSentencePage2.grid(row=5,column=0)
+displayClearSentencePage2.grid(row=5,column=2)
 
 
 
 btnReturnHomePage2 = ttk.Button(page2, text="Retour à l'accueil", command=lambda: page1.tkraise())
-btnReturnHomePage2.grid(row=6, column=0, columnspan=3)
+btnReturnHomePage2.grid(row=7, column=0, columnspan=3)
 
 
 
@@ -308,95 +309,103 @@ page3 = Frame(window)
 page3.grid(row=0, column=0, sticky="nsew")
 
 tittlePage3 = Label(page3, text="Chiffrement affine", font=style1)
-tittlePage3.pack(pady=20)
+tittlePage3.grid(row=0, column=0, columnspan=4)
 
 
 #ClearToCrypt
 labelEntryClearSentencePage3 = Label(page3, text = "Entrez la phrase que vous souhaitez chiffrer", font=style2)
-labelEntryClearSentencePage3.pack()
+labelEntryClearSentencePage3.grid(row=1, column=0)
 
 entryClearSentencePage3 = Entry(page3)
 entryClearSentencePage3['font'] = f
-entryClearSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryClearSentencePage3.grid(row=2, column=0)
 
 
 
-labelEntryClefA = Label(page3, text = "Entrez la clef \"a\"", font=style2)
-labelEntryClefA.pack()
+labelEntryClefA = Label(page3, text = "Séléctionnez la clef \"a\"", font=style2)
+labelEntryClefA.grid(row=3, column=0)
 
-entryClefA = Entry(page3)
-entryClefA['font'] = f
-entryClefA.pack(side=TOP, anchor=W, fill=X, expand=YES)
+
+
+valuesClefACrypt = IntVar()
+valuesClefACrypt.set("1")
+dropListClefACrypt = OptionMenu(page3, valuesClefACrypt, 1, 17)
+dropListClefACrypt.grid(row=4, column=0)
 
 
 
 labelEntryClefB = Label(page3, text = "Entrez la clef \"b\"", font=style2)
-labelEntryClefB.pack()
+labelEntryClefB.grid(row=5, column=0)
 
 entryClefB = Entry(page3)
 entryClefB['font'] = f
-entryClefB.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryClefB.grid(row=6, column=0)
 
 
 btnToCryptPage3 = ttk.Button(page3, text="Chiffrer la phrase", command=lambda: crypt())
-btnToCryptPage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
+btnToCryptPage3.grid(row=7, column=0)
 
 
 
 labelEntryCryptedSentencePage3 = Label(page3, text = "Phrase chiffrée :", font=style2)
-labelEntryCryptedSentencePage3.pack()
+labelEntryCryptedSentencePage3.grid(row=8, column=0)
 
 displayCryptedSentencePage3 = Entry(page3)
 displayCryptedSentencePage3['font'] = f
-displayCryptedSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
+displayCryptedSentencePage3.grid(row=9, column=0)
 
 
+
+#separation
+separationPage2 = Canvas(page3, width=5, bg="grey")
+separationPage2.grid(row=1,column=1, rowspan=10);
 
 
 #CryptToDecrypt
 labelEntryCryptedSentencePage3 = Label(page3, text = "Entrez la phrase que vous souhaitez chiffrer", font=style2)
-labelEntryCryptedSentencePage3.pack()
+labelEntryCryptedSentencePage3.grid(row=1, column=3)
 
 entryCryptedSentencePage3 = Entry(page3)
 entryCryptedSentencePage3['font'] = f
-entryCryptedSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryCryptedSentencePage3.grid(row=2, column=3)
 
 
 
 labelClefAToDecrypt = Label(page3, text = "Entrez la clef \"a\"", font=style2)
-labelClefAToDecrypt.pack()
+labelClefAToDecrypt.grid(row=3, column=3)
 
-entryClefAToDecrypt = Entry(page3)
-entryClefAToDecrypt['font'] = f
-entryClefAToDecrypt.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
+valuesClefACDecrypt = IntVar()
+valuesClefACDecrypt.set("1")
+dropListClefACDecrypt = OptionMenu(page3, valuesClefACDecrypt, 1, 17)
+dropListClefACDecrypt.grid(row=4, column=3)
 
 
 labelClefBToDecrypt = Label(page3, text = "Entrez la clef \"b\"", font=style2)
-labelClefBToDecrypt.pack()
+labelClefBToDecrypt.grid(row=5, column=3)
 
 entryClefBToDecrypt = Entry(page3)
 entryClefBToDecrypt['font'] = f
-entryClefBToDecrypt.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryClefBToDecrypt.grid(row=6, column=3)
 
 
 btnToDecryptPage3 = ttk.Button(page3, text="déchiffrer la phrase", command=lambda: decrypt())
-btnToDecryptPage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
+btnToDecryptPage3.grid(row=7, column=3)
 
 
 
 labelEntryDecryptedSentencePage3 = Label(page3, text = "Phrase déchiffrée :", font=style2)
-labelEntryDecryptedSentencePage3.pack()
+labelEntryDecryptedSentencePage3.grid(row=8, column=3)
 
 displayDecryptedSentencePage3 = Entry(page3)
 displayDecryptedSentencePage3['font'] = f
-displayDecryptedSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
+displayDecryptedSentencePage3.grid(row=9, column=3)
 
 
 
 
 btnReturnHomePage3 = ttk.Button(page3, text="Retour à l'accueil", command=lambda: page1.tkraise())
-btnReturnHomePage3.pack()
+btnReturnHomePage3.grid(row=11, column=0, columnspan=4)
 
 
 
