@@ -209,8 +209,9 @@ def inverse(clefA):
 
 window = tk.Tk()
 f = font.Font(family='Bahnschrift')
-style1 = font.Font(size=16)
-style2 = font.Font(size=12)
+style1 = font.Font(size=20)
+style2 = font.Font(size=16)
+style3 = font.Font(size=12)
 
 
 
@@ -239,57 +240,63 @@ page2 = Frame(window)
 page2.grid(row=0, column=0, sticky="nsew")
 
 tittlePage2 = Label(page2, text="Chiffrement alphabet inversé", font=style1)
-tittlePage2.pack(pady=20, side=TOP, anchor=W, fill=X, expand=YES)
+tittlePage2.grid(row=0, column=0, columnspan=3)
 
 
 
 #ClearToCrypt
+clearToCryptSection = Frame(window)
+
+
 labelEntryClearSentencePage2 = Label(page2, text = "Entrez la phrase que vous souhaitez chiffrer", font=style2)
-labelEntryClearSentencePage2.pack()
+labelEntryClearSentencePage2.grid(row=1, column=0)
 
 entryClearSentencePage2 = Entry(page2)
 entryClearSentencePage2['font'] = f
-entryClearSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryClearSentencePage2.grid(row=2, column=0)
 
 btnToCryptPage2 = ttk.Button(page2, text="Chiffrer la phrase", command=lambda: chiffrerPhrase())
-btnToCryptPage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
+btnToCryptPage2.grid(row=3, column=0)
 
 
 labelEntryCryptedSentencePage2 = Label(page2, text = "Phrase chiffrée :", font=style2)
-labelEntryCryptedSentencePage2.pack()
-
+labelEntryCryptedSentencePage2.grid(row=4, column=0)
+3
 displayCryptedSentencePage2 = Entry(page2)
 displayCryptedSentencePage2['font'] = f
-displayCryptedSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
-
-
-
+displayCryptedSentencePage2.grid(row=5, column=0)
 
 
 
 
 #CryptToClear
 labelEntryCryptedSentencePage2 = Label(page2, text = "Entrez la phrase que vous souhaitez déchiffrer", font=style2)
-labelEntryCryptedSentencePage2.pack()
+labelEntryCryptedSentencePage2.grid(row=1,column=0)
 
 entryCryptedSentencePage2 = Entry(page2)
 entryCryptedSentencePage2['font'] = f
-entryCryptedSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
+entryCryptedSentencePage2.grid(row=2,column=0)
 
 btnToDecryptPage2 = ttk.Button(page2, text="déchiffrer la phrase", command=lambda: dechiffrerPhrase())
-btnToDecryptPage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
+btnToDecryptPage2.grid(row=3,column=0)
 
 labelEntryDecryptedSentencePage2 = Label(page2, text = "Phrase déchiffrée :", font=style2)
-labelEntryDecryptedSentencePage2.pack()
+labelEntryDecryptedSentencePage2.grid(row=4,column=0)
 
 displayClearSentencePage2 = Entry(page2)
 displayClearSentencePage2['font'] = f
-displayClearSentencePage2.pack(side=TOP, anchor=W, fill=X, expand=YES)
+displayClearSentencePage2.grid(row=5,column=0)
 
 
 
 btnReturnHomePage2 = ttk.Button(page2, text="Retour à l'accueil", command=lambda: page1.tkraise())
-btnReturnHomePage2.pack(side=BOTTOM, anchor=W, fill=X, expand=YES)
+btnReturnHomePage2.grid(row=6, column=0, columnspan=3)
+
+
+
+
+
+
 
 
 
@@ -388,8 +395,8 @@ displayDecryptedSentencePage3.pack(side=TOP, anchor=W, fill=X, expand=YES)
 
 
 
-btnReturnHome = ttk.Button(page3, text="Retour à l'accueil", command=lambda: page1.tkraise())
-btnReturnHome.pack()
+btnReturnHomePage3 = ttk.Button(page3, text="Retour à l'accueil", command=lambda: page1.tkraise())
+btnReturnHomePage3.pack()
 
 
 
@@ -402,24 +409,6 @@ window.title("Chiffrator2000")
 
 
 window.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
