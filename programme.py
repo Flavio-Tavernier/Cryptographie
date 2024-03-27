@@ -371,7 +371,7 @@ entryCryptedSentencePage3.grid(row=2, column=3)
 
 
 
-labelClefAToDecrypt = Label(page3, text = "Entrez la clef \"a\"", font=style2)
+labelClefAToDecrypt = Label(page3, text = "Séléctionnez la clef \"a\"", font=style2)
 labelClefAToDecrypt.grid(row=3, column=3)
 
 
