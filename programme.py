@@ -329,7 +329,8 @@ labelEntryClefA.grid(row=3, column=0)
 
 valuesClefACrypt = IntVar()
 valuesClefACrypt.set("1")
-dropListClefACrypt = OptionMenu(page3, valuesClefACrypt, 1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 65, 67, 71, 73, 77, 79, 83, 85, 89, 91, 95)
+dropListClefACrypt = OptionMenu(page3, valuesClefACrypt, 1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41,
+43, 47, 49, 53, 55, 59, 61, 65, 67, 71, 73, 77, 79, 83, 85, 89, 91, 95)
 dropListClefACrypt.grid(row=4, column=0)
 
 
@@ -377,7 +378,8 @@ labelClefAToDecrypt.grid(row=3, column=3)
 
 valuesClefACDecrypt = IntVar()
 valuesClefACDecrypt.set("1")
-dropListClefACDecrypt = OptionMenu(page3, valuesClefACDecrypt, 1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 65, 67, 71, 73, 77, 79, 83, 85, 89, 91, 95)
+dropListClefACDecrypt = OptionMenu(page3, valuesClefACDecrypt, 1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41,
+43, 47, 49, 53, 55, 59, 61, 65, 67, 71, 73, 77, 79, 83, 85, 89, 91, 95)
 dropListClefACDecrypt.grid(row=4, column=3)
 
 
