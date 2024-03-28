@@ -1,24 +1,41 @@
-def pgcd(nbChars) :
+import math
 
-    i = 0 
-    listPgcd = []
 
-    while i < nbChars :
-        i += 1
+def pgcd(a, nbChars) :
+        if a < nbChars :
+            a, nbChars = nbChars, a
 
-        print(i)
-
-        if i < nbChars :
-            i, nbChars = nbChars, i
-
-        if i % nbChars == 0 :
-            print(i)
-            listPgcd.append(i) 
+        if a % nbChars == 0 :
+            return nbChars
 
         for k in range(nbChars//2, 0, -1) :
-            if k % k == 0 and nbChars % k == 0 :
-                listPgcd.append("test")
+            if a % k == 0 and nbChars % k == 0 :
+                return k
 
-    print(listPgcd)
-        
+    
 
+
+def getListePremier(nbChars) :
+    i = 0
+    listeNombrePremiersAvecNbChars = []
+
+
+    for i in range(nbChars) :
+        i += 1  
+        if (pgcd(i, nbChars) == 1) :
+            listeNombrePremiersAvecNbChars.append(i)
+
+    print(listeNombrePremiersAvecNbChars)
+
+
+
+def pgcdFacile() :
+     
+    listePGCD = []
+
+    for i in range (96) :
+        i+=1
+        if math.gcd(i,96) == 1 :
+            listePGCD.append(i)
+
+    print(listePGCD)

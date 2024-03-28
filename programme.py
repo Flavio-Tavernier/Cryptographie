@@ -329,7 +329,7 @@ labelEntryClefA.grid(row=3, column=0)
 
 valuesClefACrypt = IntVar()
 valuesClefACrypt.set("1")
-dropListClefACrypt = OptionMenu(page3, valuesClefACrypt, 1, 17)
+dropListClefACrypt = OptionMenu(page3, valuesClefACrypt, 1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 65, 67, 71, 73, 77, 79, 83, 85, 89, 91, 95)
 dropListClefACrypt.grid(row=4, column=0)
 
 
@@ -347,7 +347,7 @@ btnToCryptPage3.grid(row=7, column=0)
 
 
 
-labelEntryCryptedSentencePage3 = Label(page3, text = "Phrase chiffrée :", font=style2)
+labelEntryCryptedSentencePage3 = Label(page3, text = "Phrase chiffrée", font=style2)
 labelEntryCryptedSentencePage3.grid(row=8, column=0)
 
 displayCryptedSentencePage3 = Entry(page3)
@@ -377,7 +377,7 @@ labelClefAToDecrypt.grid(row=3, column=3)
 
 valuesClefACDecrypt = IntVar()
 valuesClefACDecrypt.set("1")
-dropListClefACDecrypt = OptionMenu(page3, valuesClefACDecrypt, 1, 17)
+dropListClefACDecrypt = OptionMenu(page3, valuesClefACDecrypt, 1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 65, 67, 71, 73, 77, 79, 83, 85, 89, 91, 95)
 dropListClefACDecrypt.grid(row=4, column=3)
 
 
@@ -394,7 +394,7 @@ btnToDecryptPage3.grid(row=7, column=3)
 
 
 
-labelEntryDecryptedSentencePage3 = Label(page3, text = "Phrase déchiffrée :", font=style2)
+labelEntryDecryptedSentencePage3 = Label(page3, text = "Phrase déchiffrée", font=style2)
 labelEntryDecryptedSentencePage3.grid(row=8, column=3)
 
 displayDecryptedSentencePage3 = Entry(page3)
