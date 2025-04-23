@@ -1,1 +1,1 @@
-Pour comprendre l'algo de SHA : https://brilliant.org/wiki/secure-hashing-algorithms/
+Oral de présentation d'outils chryptrographiques en python, en cours de mathématiques.
